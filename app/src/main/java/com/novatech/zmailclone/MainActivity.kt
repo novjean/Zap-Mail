@@ -1,5 +1,6 @@
-package com.novatech.gmailclone
+package com.novatech.zmailclone
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +11,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.novatech.gmailclone.ui.theme.ZmailCloneTheme
+import com.novatech.zmailclone.components.HomeAppBar
+import com.novatech.zmailclone.ui.theme.ZmailCloneTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,9 +31,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ZmailApp() {
-    Scaffold(topBar = )
+    Scaffold(topBar = {HomeAppBar()}){
+
+    }
 }
 
 @Preview(showBackground = true)

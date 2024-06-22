@@ -1,4 +1,4 @@
-package com.novatech.gmailclone.ui.theme
+package com.novatech.zmailclone.ui.theme
 
 import android.app.Activity
 import android.os.Build
