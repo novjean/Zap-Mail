@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.novatech.zmailclone.components.HomeAppBar
 import com.novatech.zmailclone.components.HomeBottomMenu
+import com.novatech.zmailclone.components.MailList
 import com.novatech.zmailclone.components.ZmailDrawerMenu
 import com.novatech.zmailclone.ui.theme.ZmailCloneTheme
 
@@ -64,10 +65,9 @@ fun ZmailApp() {
                 )
             }
             ) {
-
+            MailList(paddingValues = it)
         }
     }
-
 }
 
 @Preview(showBackground = true)
