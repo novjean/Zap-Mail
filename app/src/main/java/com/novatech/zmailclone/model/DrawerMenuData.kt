@@ -1,4 +1,4 @@
-package com.novatech.zmailclone
+package com.novatech.zmailclone.model
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AllInbox
