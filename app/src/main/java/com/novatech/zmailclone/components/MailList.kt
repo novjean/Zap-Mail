@@ -1,5 +1,8 @@
 package com.novatech.zmailclone.components
 
+import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -31,11 +34,14 @@ import com.novatech.zmailclone.mailList
 import com.novatech.zmailclone.model.MailData
 
 @Composable
-fun MailList(paddingValues: PaddingValues) {
+fun MailList(paddingValues: PaddingValues, scrollState: ScrollState) {
     Box(modifier = Modifier.padding(paddingValues)){
         LazyColumn(modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)) {
+            .padding(16.dp)
+            .scrollable(scrollState, Orientation.Vertical)
+
+        ) {
             items(mailList) {
                 mailData -> MailItem(mailData = mailData)
             }

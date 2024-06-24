@@ -14,6 +14,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
@@ -22,6 +23,7 @@ import com.novatech.zmailclone.components.HomeAppBar
 import com.novatech.zmailclone.components.HomeBottomMenu
 import com.novatech.zmailclone.components.MailList
 import com.novatech.zmailclone.components.ZmailDrawerMenu
+import com.novatech.zmailclone.components.ZmailFab
 import com.novatech.zmailclone.ui.theme.ZmailCloneTheme
 
 class MainActivity : ComponentActivity() {
@@ -50,6 +52,11 @@ fun ZmailApp() {
     val bottomBarState = rememberSaveable { (mutableStateOf(true)) }
 //    val navController = rememberNavController()
 
+    // this will be used for the dialog
+    val openDialog = remember {
+        mutableStateOf(false)
+    }
+
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -57,15 +64,19 @@ fun ZmailApp() {
         },
     ) {
         Scaffold(
-            topBar = { HomeAppBar(drawerState, coroutineScope) },
+            topBar = { HomeAppBar(drawerState, coroutineScope, openDialog) },
             bottomBar = {
                 HomeBottomMenu(
 //                    navController = navController,
 //                    bottomBarState = bottomBarState
                 )
+            },
+            floatingActionButton = {
+                ZmailFab(scrollState)
             }
+
             ) {
-            MailList(paddingValues = it)
+            MailList(paddingValues = it, scrollState)
         }
     }
 }
