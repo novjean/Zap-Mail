@@ -1,5 +1,7 @@
 package com.novatech.zmailclone
 
+import com.novatech.gmailclone.R
+import com.novatech.zmailclone.model.Account
 import com.novatech.zmailclone.model.MailData
 
 val mailList = listOf(
@@ -76,8 +78,8 @@ val mailList = listOf(
 )
 
 //Todo 2: create a dummy list of accounts
-//val accountList = listOf<Account>(
-//    Account(icon =  R.drawable.tutorials,userName = "Tutorials Eu",email = "tutorials@eu.com",unReadMails = 99),
-//    Account(userName = "Chris Morty",email = "chris@gmail.com",unReadMails =80),
-//    Account(userName = "Christy Jane",email = "jane@gmail.com",unReadMails = 99)
-//)
+val accountList = listOf<Account>(
+    Account(icon =  R.drawable.tutorials,userName = "Supernova",email = "supernovas@zapmail.com",unReadMails = 99),
+    Account(userName = "Nova Jo",email = "novajo@zapmail.com",unReadMails = 9),
+    Account(userName = "Chick",email = "chick@zapmail.com",unReadMails = 28)
+)
